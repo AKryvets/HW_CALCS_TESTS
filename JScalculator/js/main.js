@@ -97,6 +97,9 @@ function Summ(a, b) {
     if(typeof a != "number" || typeof b != "number")
         return 'false';
     a += b;
+     let local = String(a); 
+        a = cutDisplay(local);
+        a = parseFloat(a);
     return a
 }
 
@@ -104,6 +107,9 @@ function minus(a, b) {
      if(typeof a != "number" || typeof b != "number")
         return 'false';
     a -= b;
+        let local = String(a); 
+        a = cutDisplay(local);
+        a = parseFloat(a);
     return a
 }
 
@@ -116,6 +122,9 @@ function divide(a, b) {
 
 
     a /= b;
+        let local = String(a); 
+        a = cutDisplay(local);
+        a = parseFloat(a);
     return a
 }
 else{
@@ -127,6 +136,9 @@ function multiply(a, b) {
     if(typeof a != "number" || typeof b != "number")
         return 'false';
     a *= b;
+        let local = String(a); 
+        a = cutDisplay(local);
+        a = parseFloat(a);
     return a
 }
 
@@ -148,15 +160,8 @@ ressultBtn.addEventListener('click', function () {
             ressultFlag = false;
             break;
          case '/':
-        //     if (countNumber === 0) {
-        //         memoryNumber = 0;
-        //         display.value = countNumber;
-        //     } else if (countNumber === '0') {
-        //         memoryNumber = 0;
-        //         display.value = countNumber;
-        //     } else {
                 memoryNumber = divide(memoryNumber, countNumber);
-            //}
+            
 
             check = true;
             isPointOn = true;

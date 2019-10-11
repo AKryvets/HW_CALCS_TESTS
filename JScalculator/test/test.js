@@ -89,6 +89,7 @@ describe("function summ", function() {
 
         assert.equal(act, exp);
     });
+
     it("call function summ with args memoryNumber = 'dasdasd', countNumber = 1 and return 'false'", function () {
         const a = 'dasdasd';
         const b = 1;
@@ -180,7 +181,7 @@ describe("function minus", function() {
     it("call function minus with args memoryNumber = -8.4, countNumber = 9.3 and return -17.7", function () {
         const a = -8.4;
         const b = 9.3;
-        const exp = -17.700000000000003;
+        const exp = -17.7;
         const act = minus(a, b);
 
         assert.equal(act, exp);
@@ -204,19 +205,28 @@ describe("function minus", function() {
         assert.equal(act, exp);
     });
 
-    it("call function minus with args memoryNumber = 4.9999, countNumber = 5.3434 and return -0.3434999999999997 ", function () {
+    it("call function minus with args memoryNumber = 4.9999, countNumber = 5.3434 and return -0.343499", function () {
         const a = 4.9999;
         const b = 5.3434;
-        const exp = -0.3434999999999997 ;
+        const exp = -0.343499;
         const act = minus(a, b);
 
         assert.equal(act, exp);
     });
 
-    it("call function minus with args memoryNumber = 2.1234567, countNumber = 1.9876543 and return 0.1358025 ", function () {
+    it("call function minus with args memoryNumber = 2.1234567, countNumber = 1.9876543 and return 0.1358024", function () {
         const a = 2.1234567;
         const b = 1.9876543;
-        const exp = 0.1358024000000002 ;
+        const exp = 0.1358024;
+        const act = minus(a, b);
+
+        assert.equal(act, exp);
+    });
+
+    it("call function minus with args memoryNumber = 2.1234567, countNumber = 1.9876543 and return 0.1358024", function () {
+        const a = 2.1234567;
+        const b = 1.9876543;
+        const exp = 0.1358024;
         const act = minus(a, b);
 
         assert.equal(act, exp);
@@ -235,6 +245,15 @@ describe("function minus", function() {
         const a = 7123.545;
         const b = 1.3;
         const exp = 7122.245;
+        const act = minus(a, b);
+
+        assert.equal(act, exp);
+    });
+
+    it("call function minus with args memoryNumber =  -123.4, countNumber = 234342, and return -234465.4", function () {
+        const a =  -123.4;
+        const b = 234342;
+        const exp = -234465.4;
         const act = minus(a, b);
 
         assert.equal(act, exp);
@@ -322,7 +341,7 @@ describe("function multiply", function() {
     it("call function multiply with args memoryNumber = 1.1, countNumber = 8.9 and return 9.79", function () {
         const a = 1.1;
         const b = 8.9;
-        const exp = 9.790000000000001 ;
+        const exp = 9.79;
         const act = multiply(a, b);
 
         assert.equal(act, exp);
@@ -409,19 +428,28 @@ describe("function multiply", function() {
         assert.equal(act, exp);
     });
 
-    it("call function multiply with args memoryNumber = 8, countNumber = 3 and return  0.33919725", function () {
+    it("call function multiply with args memoryNumber = 8, countNumber = 3 and return  0.3391972", function () {
         const a = 0.25;
         const b = 1.356789;
-        const exp =  0.33919725;
+        const exp =  0.3391972;
         const act = multiply(a, b);
 
         assert.equal(act, exp);
     });
 
-    it("call function multiply with args memoryNumber = 0.9545, countNumber = 1.356789 and return  1.2950551005", function () {
+    it("call function multiply with args memoryNumber = 0.9545, countNumber = 1.356789 and return  1.2950551", function () {
         const a = 0.9545;
         const b = 1.356789;
-        const exp =  1.2950551005;
+        const exp =  1.2950551;
+        const act = multiply(a, b);
+
+        assert.equal(act, exp);
+    });
+
+    it("call function multiply with args memoryNumber = 2.123456789, countNumber = 1.9876543 and return  4.2206980175", function () {
+        const a = 2.123456789;
+        const b = 1.9876543;
+        const exp =  4.2206980;
         const act = multiply(a, b);
 
         assert.equal(act, exp);
@@ -458,12 +486,12 @@ describe("function multiply", function() {
     });
 });
 
-describe("function divide ",function() {
+describe("function divide", function() {
 
-    it("call function divide with args memoryNumber = 10, countNumber = 23 and return 0.43478260869565216 ", function () {
+    it("call function divide with args memoryNumber = 10, countNumber = 23 and return 0.4347826", function () {
         const a = 10;
         const b = 23;
-        const exp = 0.43478260869565216 ;
+        const exp = 0.4347826;
         const act = divide(a, b);
 
         assert.equal(act, exp);
@@ -496,10 +524,10 @@ describe("function divide ",function() {
         assert.equal(act, exp);
     });
 
-    it("call function divide with args memoryNumber = 333, countNumber = 44 and return 7.568181818181818 ", function () {
+    it("call function divide with args memoryNumber = 333, countNumber = 44 and return 7.5681818", function () {
         const a = 333;
         const b = 44;
-        const exp = 7.568181818181818 ;
+        const exp = 7.5681818;
         const act = divide(a, b);
 
         assert.equal(act, exp);
@@ -514,10 +542,10 @@ describe("function divide ",function() {
         assert.equal(act, exp);
     });
 
-    it("call function divide with args memoryNumber = 45.6, countNumber = 12.3 and return 3.7073170731707314 ", function () {
+    it("call function divide with args memoryNumber = 45.6, countNumber = 12.3 and return 3.7073170", function () {
         const a = 45.6;
         const b = 12.3;
-        const exp = 3.7073170731707314 ;
+        const exp = 3.7073170;
         const act = divide(a, b);
 
         assert.equal(act, exp);
