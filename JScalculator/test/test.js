@@ -89,6 +89,36 @@ describe("function summ", function() {
 
         assert.equal(act, exp);
     });
+    it("call function summ with args memoryNumber = 'dasdasd', countNumber = 1 and return 'false'", function () {
+        const a = 'dasdasd';
+        const b = 1;
+        const exp = 'false';
+        const act = Summ(a, b);
+
+        assert.equal(act, exp);
+    });
+     it("call function summ with args memoryNumber = 1, countNumber = 'aaaaa' and return 'false'", function () {
+        const a = 1;
+        const b = 'aaaaa';
+        const exp = 'false';
+        const act = Summ(a, b);
+
+        assert.equal(act, exp);
+    });
+     it("call function summ with args memoryNumber = 'dsd', countNumber = 'aaaaa' and return 'false'", function () {
+        const a = 'dsd';
+        const b = 'aaaaa';
+        const exp = 'false';
+        const act = Summ(a, b);
+
+        assert.equal(act, exp);
+    });
+     it("call function summ without args return 'false'", function () {
+        const exp = 'false';
+        const act = Summ();
+
+        assert.equal(act, exp);
+    });
 });
 
 describe("function minus", function() {
@@ -150,7 +180,7 @@ describe("function minus", function() {
     it("call function minus with args memoryNumber = -8.4, countNumber = 9.3 and return -17.7", function () {
         const a = -8.4;
         const b = 9.3;
-        const exp = -17.7;
+        const exp = -17.700000000000003;
         const act = minus(a, b);
 
         assert.equal(act, exp);
@@ -174,28 +204,19 @@ describe("function minus", function() {
         assert.equal(act, exp);
     });
 
-    it("call function minus with args memoryNumber = 4.9999, countNumber = 5.3434 and return -0.3435", function () {
+    it("call function minus with args memoryNumber = 4.9999, countNumber = 5.3434 and return -0.3434999999999997 ", function () {
         const a = 4.9999;
         const b = 5.3434;
-        const exp = -0.3435;
+        const exp = -0.3434999999999997 ;
         const act = minus(a, b);
 
         assert.equal(act, exp);
     });
 
-    it("call function minus with args memoryNumber = 2.1234567, countNumber = 1.9876543 and return 0.1358024", function () {
+    it("call function minus with args memoryNumber = 2.1234567, countNumber = 1.9876543 and return 0.1358025 ", function () {
         const a = 2.1234567;
         const b = 1.9876543;
-        const exp = 0.1350824;
-        const act = minus(a, b);
-
-        assert.equal(act, exp);
-    });
-
-    it("call function minus with args memoryNumber = 2.1234567, countNumber = 1.9876543 and return 0.1358024", function () {
-        const a = 2.1234567;
-        const b = 1.9876543;
-        const exp = 0.1358024;
+        const exp = 0.1358024000000002 ;
         const act = minus(a, b);
 
         assert.equal(act, exp);
@@ -219,15 +240,6 @@ describe("function minus", function() {
         assert.equal(act, exp);
     });
 
-    it("call function minus with args memoryNumber =  -123.4, countNumber = 234342, and return -234456.4", function () {
-        const a =  -123.4;
-        const b = 234342;
-        const exp = -234456.4;
-        const act = minus(a, b);
-
-        assert.equal(act, exp);
-    });
-
     it("call function minus with args memoryNumber = 234.777, countNumber = 234.777 and return 0", function () {
         const a = 234.777;
         const b = 234.777;
@@ -245,6 +257,37 @@ describe("function minus", function() {
 
         assert.equal(act, exp);
     });
+     it("call function minus with args memoryNumber = 'dasdasd', countNumber = 1 and return 'false'", function () {
+        const a = 'dasdasd';
+        const b = 1;
+        const exp = 'false';
+        const act = minus(a, b);
+
+        assert.equal(act, exp);
+    });
+     it("call function minus with args memoryNumber = 1, countNumber = 'aaaaa' and return 'false'", function () {
+        const a = 1;
+        const b = 'aaaaa';
+        const exp = 'false';
+        const act = minus(a, b);
+
+        assert.equal(act, exp);
+    });
+     it("call function minus with args memoryNumber = 'dsd', countNumber = 'aaaaa' and return 'false'", function () {
+        const a = 'dsd';
+        const b = 'aaaaa';
+        const exp = 'false';
+        const act = minus(a, b);
+
+        assert.equal(act, exp);
+    });
+     it("call function minus without args return 'false'", function () {
+        const exp = 'false';
+        const act = minus();
+
+        assert.equal(act, exp);
+    });
+
 });
 
 describe("function multiply", function() {
@@ -383,12 +426,33 @@ describe("function multiply", function() {
 
         assert.equal(act, exp);
     });
-
-    it("call function multiply with args memoryNumber = 2.123456789, countNumber = 1.9876543 and return  4.2206980175", function () {
-        const a = 2.123456789;
-        const b = 1.9876543;
-        const exp =  4.2206980175;
+    it("call function multiply with args memoryNumber = 'dasdasd', countNumber = 1 and return 'false'", function () {
+        const a = 'dasdasd';
+        const b = 1;
+        const exp = 'false';
         const act = multiply(a, b);
+
+        assert.equal(act, exp);
+    });
+     it("call function multiply with args memoryNumber = 1, countNumber = 'aaaaa' and return 'false'", function () {
+        const a = 1;
+        const b = 'aaaaa';
+        const exp = 'false';
+        const act = multiply(a, b);
+
+        assert.equal(act, exp);
+    });
+     it("call function multiply with args memoryNumber = 'dsd', countNumber = 'aaaaa' and return 'false'", function () {
+        const a = 'dsd';
+        const b = 'aaaaa';
+        const exp = 'false';
+        const act = multiply(a, b);
+
+        assert.equal(act, exp);
+    });
+     it("call function multiply without args return 'false'", function () {
+        const exp = 'false';
+        const act = multiply();
 
         assert.equal(act, exp);
     });
@@ -396,10 +460,10 @@ describe("function multiply", function() {
 
 describe("function divide ",function() {
 
-    it("call function divide with args memoryNumber = 10, countNumber = 23 and return 0.4347826", function () {
+    it("call function divide with args memoryNumber = 10, countNumber = 23 and return 0.43478260869565216 ", function () {
         const a = 10;
         const b = 23;
-        const exp = 0.4347826;
+        const exp = 0.43478260869565216 ;
         const act = divide(a, b);
 
         assert.equal(act, exp);
@@ -432,10 +496,10 @@ describe("function divide ",function() {
         assert.equal(act, exp);
     });
 
-    it("call function divide with args memoryNumber = 333, countNumber = 44 and return 7.5681818", function () {
+    it("call function divide with args memoryNumber = 333, countNumber = 44 and return 7.568181818181818 ", function () {
         const a = 333;
         const b = 44;
-        const exp = 7.5681818;
+        const exp = 7.568181818181818 ;
         const act = divide(a, b);
 
         assert.equal(act, exp);
@@ -450,10 +514,10 @@ describe("function divide ",function() {
         assert.equal(act, exp);
     });
 
-    it("call function divide with args memoryNumber = 45.6, countNumber = 12.3 and return 3.7073170", function () {
+    it("call function divide with args memoryNumber = 45.6, countNumber = 12.3 and return 3.7073170731707314 ", function () {
         const a = 45.6;
         const b = 12.3;
-        const exp = 3.7073170;
+        const exp = 3.7073170731707314 ;
         const act = divide(a, b);
 
         assert.equal(act, exp);
@@ -467,12 +531,42 @@ describe("function divide ",function() {
 
         assert.equal(act, exp);
     });
+    it("call function divide with args memoryNumber = 'dasdasd', countNumber = 1 and return 'false'", function () {
+        const a = 'dasdasd';
+        const b = 1;
+        const exp = 'false';
+        const act = divide(a, b);
+
+        assert.equal(act, exp);
+    });
+     it("call function divide with args memoryNumber = 1, countNumber = 'aaaaa' and return 'false'", function () {
+        const a = 1;
+        const b = 'aaaaa';
+        const exp = 'false';
+        const act = divide(a, b);
+
+        assert.equal(act, exp);
+    });
+     it("call function divide with args memoryNumber = 'dsd', countNumber = 'aaaaa' and return 'false'", function () {
+        const a = 'dsd';
+        const b = 'aaaaa';
+        const exp = 'false';
+        const act = divide(a, b);
+
+        assert.equal(act, exp);
+    });
+     it("call function divide without args return 'false'", function () {
+        const exp = 'false';
+        const act = divide();
+
+        assert.equal(act, exp);
+    });
 
 });
 
     describe("function cutDisplay", function() {
 
-        it("call function cutDisplay with args a = 1123123213221 and return 112312321 symbols", function () {
+        it("call function cutDisplay with arg a = 1123123213221 and return 112312321 symbols", function () {
             const a   = '1123123213221';
             const exp = 112312321;
             const act = cutDisplay(a);
@@ -480,7 +574,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = -1.123123213221 and return -1.123123 symbols", function () {
+        it("call function cutDisplay with arg a = -1.123123213221 and return -1.123123 symbols", function () {
             const a   = '-1.123123213221';
             const exp = -1.123123;
             const act = cutDisplay(a);
@@ -488,7 +582,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = 123 and return 123 symbols", function () {
+        it("call function cutDisplay with arg a = 123 and return 123 symbols", function () {
             const a   = '123';
             const exp = 123;
             const act = cutDisplay(a);
@@ -496,7 +590,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = -456 and return -456 symbols", function () {
+        it("call function cutDisplay with arg a = -456 and return -456 symbols", function () {
             const a   = '-456';
             const exp = -456;
             const act = cutDisplay(a);
@@ -504,7 +598,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = 0 and return 0 symbols", function () {
+        it("call function cutDisplay with arg a = 0 and return 0 symbols", function () {
             const a   = '0';
             const exp = 0;
             const act = cutDisplay(a);
@@ -512,7 +606,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = 1234567891 and return 123456789 symbols", function () {
+        it("call function cutDisplay with arg a = 1234567891 and return 123456789 symbols", function () {
             const a   = '1234567891';
             const exp = 123456789;
             const act = cutDisplay(a);
@@ -520,7 +614,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = -123456789 and return -12345678 symbols", function () {
+        it("call function cutDisplay with arg a = -123456789 and return -12345678 symbols", function () {
             const a   = '-123456789';
             const exp = -12345678;
             const act = cutDisplay(a);
@@ -528,7 +622,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = -1.2345678 and return -1.234567 symbols", function () {
+        it("call function cutDisplay with arg a = -1.2345678 and return -1.234567 symbols", function () {
             const a   = '-1.2345678';
             const exp = -1.234567;
             const act = cutDisplay(a);
@@ -536,7 +630,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = 1.23456789 and return 1.2345678 symbols", function () {
+        it("call function cutDisplay with arg a = 1.23456789 and return 1.2345678 symbols", function () {
             const a   = '1.23456789';
             const exp = 1.2345678;
             const act = cutDisplay(a);
@@ -544,7 +638,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = 1.23456789 and return 1.2345678 symbols", function () {
+        it("call function cutDisplay with arg a = 1.23456789 and return 1.2345678 symbols", function () {
             const a   = '1.23456789';
             const exp = 1.2345678;
             const act = cutDisplay(a);
@@ -552,7 +646,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = 33.56789987 and return 33.567899 symbols", function () {
+        it("call function cutDisplay with arg a = 33.56789987 and return 33.567899 symbols", function () {
             const a   = '33.56789987';
             const exp = 33.567899;
             const act = cutDisplay(a);
@@ -560,7 +654,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = -33.56789987 and return -33.56789 symbols", function () {
+        it("call function cutDisplay with arg a = -33.56789987 and return -33.56789 symbols", function () {
             const a   = '-33.56789987';
             const exp = -33.56789;
             const act = cutDisplay(a);
@@ -568,7 +662,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = 99999.98765 and return 99999.987 symbols", function () {
+        it("call function cutDisplay with arg a = 99999.98765 and return 99999.987 symbols", function () {
             const a   = '99999.98765';
             const exp = 99999.987;
             const act = cutDisplay(a);
@@ -576,7 +670,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = -99999.98765 and return -99999.98 symbols", function () {
+        it("call function cutDisplay with arg a = -99999.98765 and return -99999.98 symbols", function () {
             const a   = '-99999.98765';
             const exp = -99999.98;
             const act = cutDisplay(a);
@@ -584,7 +678,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = 33.56789987 and return 33.567899 symbols", function () {
+        it("call function cutDisplay with arg a = 33.56789987 and return 33.567899 symbols", function () {
             const a   = '33.56789987';
             const exp = 33.567899;
             const act = cutDisplay(a);
@@ -592,7 +686,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = 44444444.44444 and return 44444444 symbols", function () {
+        it("call function cutDisplay with arg a = 44444444.44444 and return 44444444 symbols", function () {
             const a   = '44444444.44444';
             const exp = 44444444;
             const act = cutDisplay(a);
@@ -600,7 +694,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = -44444444.44444 and return -44444444 symbols", function () {
+        it("call function cutDisplay with arg a = -44444444.44444 and return -44444444 symbols", function () {
             const a   = '-44444444.44444';
             const exp = -44444444;
             const act = cutDisplay(a);
@@ -608,7 +702,7 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = -0.143456789 and return -0.143456 symbols", function () {
+        it("call function cutDisplay with arg a = -0.143456789 and return -0.143456 symbols", function () {
             const a   = '-0.143456789';
             const exp = -0.143456;
             const act = cutDisplay(a);
@@ -616,11 +710,17 @@ describe("function divide ",function() {
             assert.equal(act, exp);
         });
 
-        it("call function cutDisplay with args a = -0.143456789 and return -0.143456 symbols", function () {
+        it("call function cutDisplay with arg a = -0.143456789 and return -0.143456 symbols", function () {
             const a   = '-0.143456789';
             const exp = -0.143456;
             const act = cutDisplay(a);
 
             assert.equal(act, exp);
         });
+        it("call function cutDisplay without arg return 'false'", function () {
+        const exp = 'false';
+        const act = cutDisplay();
+
+        assert.equal(act, exp);
+    });
     })

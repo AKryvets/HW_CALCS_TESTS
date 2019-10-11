@@ -94,21 +94,38 @@ clearBtn.addEventListener('click', function () {
 })
 
 function Summ(a, b) {
+    if(typeof a != "number" || typeof b != "number")
+        return 'false';
     a += b;
     return a
 }
 
 function minus(a, b) {
+     if(typeof a != "number" || typeof b != "number")
+        return 'false';
     a -= b;
     return a
 }
 
 function divide(a, b) {
+    if(typeof a == "number" && typeof b == "number"){
+    if(a == 0 || b == 0 ){
+        console.log('dnul00000  ' + a + "  " + b);
+        return 0;
+    }
+
+
     a /= b;
     return a
 }
+else{
+    return 'false';
+}
+}
 
 function multiply(a, b) {
+    if(typeof a != "number" || typeof b != "number")
+        return 'false';
     a *= b;
     return a
 }
@@ -116,7 +133,7 @@ function multiply(a, b) {
 ressultBtn.addEventListener('click', function () {
     if (ressultFlag) {
         countNumber = +display.value;
-    }
+    
     switch (flag) {
         case '+':
             memoryNumber = Summ(memoryNumber, countNumber);
@@ -130,16 +147,16 @@ ressultBtn.addEventListener('click', function () {
             isPointOn = true;
             ressultFlag = false;
             break;
-        case '/':
-            if (countNumber === 0) {
-                memoryNumber = 0;
-                display.value = countNumber;
-            } else if (countNumber === '0') {
-                memoryNumber = 0;
-                display.value = countNumber;
-            } else {
+         case '/':
+        //     if (countNumber === 0) {
+        //         memoryNumber = 0;
+        //         display.value = countNumber;
+        //     } else if (countNumber === '0') {
+        //         memoryNumber = 0;
+        //         display.value = countNumber;
+        //     } else {
                 memoryNumber = divide(memoryNumber, countNumber);
-            }
+            //}
 
             check = true;
             isPointOn = true;
@@ -156,9 +173,13 @@ ressultBtn.addEventListener('click', function () {
     cutDisplay(display.value);
     memoryNumber = 0;
     countNumber = 0;
+    flag = '';
+}
 });
 
 function cutDisplay(a) {
+    if(a == null)
+        return 'false';
     if (a.length > 9) {
         a = a.slice(0, 9);
     }
@@ -170,9 +191,10 @@ function lastOperation() {
     switch (flag) {
         case '+' :
             if (check) {
+
                 memoryNumber = display.value;
             } else {
-                memoryNumber += +display.value;
+                memoryNumber = Summ(memoryNumber, Number(display.value));
             }
             display.value = memoryNumber;
             cutDisplay(display.value);
@@ -181,7 +203,7 @@ function lastOperation() {
             if (check) {
                 memoryNumber = display.value;
             } else {
-                memoryNumber -= +display.value;
+                memoryNumber = minus(memoryNumber, Number(display.value));
             }
             display.value = memoryNumber;
             cutDisplay(display.value);
@@ -190,7 +212,7 @@ function lastOperation() {
             if (check) {
                 memoryNumber = display.value;
             } else {
-                memoryNumber /= +display.value;
+                memoryNumber = divide(memoryNumber, Number(display.value));
             }
             display.value = memoryNumber;
             cutDisplay(display.value);
@@ -199,7 +221,7 @@ function lastOperation() {
             if (check) {
                 memoryNumber = display.value;
             } else {
-                memoryNumber *= +display.value;
+                memoryNumber = multiply(memoryNumber, Number(display.value));
             }
             display.value = memoryNumber;
             cutDisplay(display.value);
