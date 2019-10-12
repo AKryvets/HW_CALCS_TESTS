@@ -179,3 +179,49 @@ describe("function sizeOfLine()", function() {
         assert.deepEqual(act, exp);
     });
 });
+
+
+describe("function revers_bigger()", function() {
+    it("call function revers_bigger with args a = 1  and return 'false'", function () {
+        const a = 'aaa';
+        const exp = 'false';
+        const act = revers_bigger(a);
+        assert.deepEqual(act, exp);
+    });
+     it("call function revers_bigger with args a = '1234556766'  and return 'false'", function () {
+        const a = '1234556766';
+        const exp = 'false';
+        const act = revers_bigger(a);
+        assert.deepEqual(act, exp);
+    });
+      it("call function revers_bigger with args a = 1675464564565464  and return 'false'", function () {
+        const a = 1675464564565464;
+        const exp = 'false';
+        const act = revers_bigger(a);
+        assert.deepEqual(act, exp);
+    });
+       it("call function revers_bigger with args a = -12312312313  and return 'false'", function () {
+        const a = -12312312313;
+        const exp = 'false';
+        const act = revers_bigger(a);
+        assert.deepEqual(act, exp);
+    });
+       it("call function revers_bigger with args a = 0  and return []", function () {
+        const a = 0;
+        const exp = [];
+        const act = revers_bigger(a);
+        assert.deepEqual(act, exp);
+    });
+       it("call function revers_bigger with args a = 999999999999  and return [\" девятьсот\", \" девяносто\", \" девять миллиард\", \" девятьсот\", \" девяносто\", \" девять миллиона\", \" девятьсот\", \" девяносто\", \" девять тысячи\", \" девятьсот\", \" девяносто\", \" девять\"]", function () {
+        const a = 999999999999 ;
+        const exp = [" девятьсот", " девяносто", " девять миллиард", " девятьсот", " девяносто", " девять миллиона", " девятьсот", " девяносто", " девять тысячи", " девятьсот", " девяносто", " девять"];
+        const act = revers_bigger(a);
+        assert.deepEqual(act, exp);
+    });
+       it("call function revers_bigger with args a = 1234  and return [empty × 6, \"\", \"\", \" один тысячи\", \" двести\", \" тридцать\", \" четыре\"]", function () {
+        const a = 1234;
+        const exp = ["","","", "", "", "", "", "", " один тысячи", " двести", " тридцать", " четыре"];
+        const act = revers_bigger(a);
+        assert.deepEqual(act, exp);
+    });
+});

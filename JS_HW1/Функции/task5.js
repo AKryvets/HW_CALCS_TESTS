@@ -1,7 +1,8 @@
 
-     function revers_bigger(a)
-    {if(a === Number(a) && a <= 999999999999 && a >= 0)
-        {
+     function revers_bigger(a){
+        if(a > 999999999999|| a < 0 || typeof a == 'string')
+            return 'false';
+
         let i = 0;
         let words = [];
         let t = 11;
@@ -20,7 +21,7 @@
                 case 3:
                     c[2] = c[2] + " миллиона";
                     break;
-                case 4: c[2] = c[2] + " миллиарда";
+                case 4: c[2] = c[2] + " миллиард";
                     break;
             }
             for (let j = 2; j >= 0; j--)
@@ -30,10 +31,6 @@
             }
         }
         return words;
-        }
-    else{
-        return 'false';
-    }
     }
     function revers(a)
     {
