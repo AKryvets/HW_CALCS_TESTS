@@ -26,6 +26,9 @@ for (let i = 0; i < allBtns.length; i++) {
 }
 let clickNumber = num => {
     if (check) {
+        if(+display.value == 0 && num == 0)//////////////
+            return 'false';//////////////////////
+
         display.value = num;
         check = false;
     } else {
@@ -143,6 +146,9 @@ function multiply(a, b) {
 }
 
 ressultBtn.addEventListener('click', function () {
+   // if(flag == '')
+      //  return 'false';
+
     if (ressultFlag) {
         countNumber = +display.value;
     

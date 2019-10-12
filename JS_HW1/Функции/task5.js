@@ -21,7 +21,7 @@
                 case 3:
                     c[2] = c[2] + " миллиона";
                     break;
-                case 4: c[2] = c[2] + " миллиард";
+                case 4: c[2] = c[2] + " миллиарда";
                     break;
             }
             for (let j = 2; j >= 0; j--)
@@ -30,6 +30,7 @@
                 t--;
             }
         }
+
         return words;
     }
     function revers(a)

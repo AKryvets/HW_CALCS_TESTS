@@ -171,11 +171,23 @@ describe("function sizeOfLine()", function() {
         const act = sizeOfLine(a,a,a,a);
         assert.deepEqual(act, exp);
     });
+       it("call function sizeOfLine with args a1,a2 = 3 , a3,a4 = 'dasdas'  and return 'false'", function () {
+        const a = 'dasdas';
+        const b = 3;
+        const exp = 'false';
+        const act = sizeOfLine(b,b,a,a);
+        assert.deepEqual(act, exp);
+    });
      it("call function sizeOfLine with args a1,a2 = 2 ,a3,a4 = 3  and return 1.4142135623730951 ", function () {
         const a = 2;
         const b = 3;
         const exp = 1.4142135623730951 ;
         const act = sizeOfLine(a,a,b,b);
+        assert.deepEqual(act, exp);
+    });
+      it("call function sizeOfLine without args  and return 'false' ", function () {
+        const exp = 'false' ;
+        const act = sizeOfLine();
         assert.deepEqual(act, exp);
     });
 });
@@ -214,14 +226,94 @@ describe("function revers_bigger()", function() {
     });
        it("call function revers_bigger with args a = 999999999999  and return [\" девятьсот\", \" девяносто\", \" девять миллиард\", \" девятьсот\", \" девяносто\", \" девять миллиона\", \" девятьсот\", \" девяносто\", \" девять тысячи\", \" девятьсот\", \" девяносто\", \" девять\"]", function () {
         const a = 999999999999 ;
-        const exp = [" девятьсот", " девяносто", " девять миллиард", " девятьсот", " девяносто", " девять миллиона", " девятьсот", " девяносто", " девять тысячи", " девятьсот", " девяносто", " девять"];
+        const exp = [" девятьсот", " девяносто", " девять миллиарда", " девятьсот", " девяносто", " девять миллиона", " девятьсот", " девяносто", " девять тысячи", " девятьсот", " девяносто", " девять"];
         const act = revers_bigger(a);
         assert.deepEqual(act, exp);
     });
-       it("call function revers_bigger with args a = 1234  and return [empty × 6, \"\", \"\", \" один тысячи\", \" двести\", \" тридцать\", \" четыре\"]", function () {
-        const a = 1234;
-        const exp = ["","","", "", "", "", "", "", " один тысячи", " двести", " тридцать", " четыре"];
+       it("call function revers_bigger with args a = 123456789123  and return [\" сто\", \" двадцать\", \" три миллиарда\", \" четыреста\", \" пятьдесят\", \" шесть миллиона\", \" семьсот\", \" восемьдесят\", \" девять тысячи\", \" сто\", \" двадцать\", \" три\"]", function () {
+        const a = 123456789123;
+        const exp = [" сто", " двадцать", " три миллиарда", " четыреста", " пятьдесят", " шесть миллиона", " семьсот", " восемьдесят", " девять тысячи", " сто", " двадцать", " три"];
         const act = revers_bigger(a);
+        assert.deepEqual(act, exp);
+    });
+});
+
+describe("function getArray()", function() {
+    it("call function getArray with args a = 1, b = 'fdfd', c = 'fdfd', d = 'fdfd'  and return 'false'", function () {
+        const a = 1;
+        const b = 'fdfd';
+        const c = 'fdfd';
+        const d = 'fdfd';
+        const exp = 'false';
+        const act = getArray(a,b,c,d);
+        assert.deepEqual(act, exp);
+    });
+    it("call function getArray with args a = 'девятьсот девяносто девять', b = 'девятьсот девяносто девять', c = 'девятьсот девяносто девять', d = 'девятьсот девяносто девять'  and return '999999999999'", function () {
+        const a = 'девятьсот девяносто девять';
+        const b = 'девятьсот девяносто девять';
+        const c = 'девятьсот девяносто девять';
+        const d = 'девятьсот девяносто девять';
+        const exp = '999999999999';
+        const act = getArray(a,b,c,d);
+        assert.deepEqual(act, exp);
+    });
+     it("call function getArray with args a = '', b = '', c = '', d = 'девятьсот девяносто девять'  and return '000000000999'", function () {
+        const a = '';
+        const b = '';
+        const c = '';
+        const d = 'девятьсот девяносто девять';
+        const exp = '000000000999';
+        const act = getArray(a,b,c,d);
+        assert.deepEqual(act, exp);
+    });
+     it("call function getArray with args a = '', b = '', c = '', d = ''  and return '000000000000'", function () {
+        const a = '';
+        const b = '';
+        const c = '';
+        const d = '';
+        const exp = '000000000000';
+        const act = getArray(a,b,c,d);
+        assert.deepEqual(act, exp);
+    });
+      it("call function getArray with args a = '', b = 'девятьсот девяносто девять', c = 'девятьсот девяносто девять', d = 'девятьсот девяносто девять'  and return '000999999999'", function () {
+        const a = '';
+        const b = 'девятьсот девяносто девять';
+        const c = 'девятьсот девяносто девять';
+        const d = 'девятьсот девяносто девять';
+        const exp = '000999999999';
+        const act = getArray(a,b,c,d);
+        assert.deepEqual(act, exp);
+    });
+      it("call function getArray with args a = '', b = '', c = 'девятьсот девяносто девять', d = 'девятьсот девяносто девять'  and return '000000999999'", function () {
+        const a = '';
+        const b = '';
+        const c = 'девятьсот девяносто девять';
+        const d = 'девятьсот девяносто девять';
+        const exp = '000000999999';
+        const act = getArray(a,b,c,d);
+        assert.deepEqual(act, exp);
+    });
+      it("call function getArray with args a = empty, b = '', c = 'девятьсот девяносто девять', d = 'девятьсот девяносто девять'  and return 'false'", function () {
+
+        const b = '';
+        const c = 'девятьсот девяносто девять';
+        const d = 'девятьсот девяносто девять';
+        const exp = 'false';
+        const act = getArray(b,c,d);
+        assert.deepEqual(act, exp);
+    });
+      it("call function getArray with args a = empty, b = empty, c = empty, d = empty  and return 'false'", function () {
+        const exp = 'false';
+        const act = getArray();
+        assert.deepEqual(act, exp);
+    });
+      it("call function getArray with args a = 1, b = 2, c = 1, d = 5  and return 'false'", function () {
+        const a = 1;
+        const b = 2;
+        const c = 1;
+        const d = 5;
+        const exp = 'false';
+        const act = getArray(a,b,c,d);
         assert.deepEqual(act, exp);
     });
 });
