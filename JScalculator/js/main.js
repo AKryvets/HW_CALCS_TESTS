@@ -100,6 +100,12 @@ function Summ(a, b) {
     if(typeof a != "number" || typeof b != "number")
         return 'false';
     a += b;
+    let c = parseInt(a);
+            console.log(c);
+     if(c > 999999999 || isNaN(a)){
+        display.value = "Error";
+        return "false";
+    }
      let local = String(a); 
         a = cutDisplay(local);
         a = parseFloat(a);
@@ -110,6 +116,12 @@ function minus(a, b) {
      if(typeof a != "number" || typeof b != "number")
         return 'false';
     a -= b;
+    let c = parseInt(a);
+            console.log(c);
+      if(c > 999999999 || isNaN(a)){
+        display.value = "Error";
+        return "false";
+    }
         let local = String(a); 
         a = cutDisplay(local);
         a = parseFloat(a);
@@ -125,6 +137,12 @@ function divide(a, b) {
 
 
     a /= b;
+    let c = parseInt(a);
+            console.log(c);
+      if(c > 999999999 || isNaN(a)){
+        display.value = "Error";
+        return "false";
+    }
         let local = String(a); 
         a = cutDisplay(local);
         a = parseFloat(a);
@@ -139,6 +157,12 @@ function multiply(a, b) {
     if(typeof a != "number" || typeof b != "number")
         return 'false';
     a *= b;
+    let c = parseInt(a);
+            console.log(c);
+    if(c > 999999999 || isNaN(a)){
+        display.value = "Error";
+        return "false";
+    }
         let local = String(a); 
         a = cutDisplay(local);
         a = parseFloat(a);
@@ -146,9 +170,6 @@ function multiply(a, b) {
 }
 
 ressultBtn.addEventListener('click', function () {
-   // if(flag == '')
-      //  return 'false';
-
     if (ressultFlag) {
         countNumber = +display.value;
     
@@ -180,6 +201,14 @@ ressultBtn.addEventListener('click', function () {
             ressultFlag = false;
             break;
     }
+        if(memoryNumber == "false")
+        {
+            return 0;
+             memoryNumber = 0;
+    countNumber = 0;
+    flag = '';
+        }
+
     display.value = memoryNumber;
     cutDisplay(display.value);
     memoryNumber = 0;
@@ -234,6 +263,12 @@ function lastOperation() {
             } else {
                 memoryNumber = multiply(memoryNumber, Number(display.value));
             }
+             if(memoryNumber == "false")
+        {
+            return 0;
+        }
+
+
             display.value = memoryNumber;
             cutDisplay(display.value);
             break;
