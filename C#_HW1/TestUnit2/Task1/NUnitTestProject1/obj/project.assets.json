@@ -5281,11 +5281,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\C#_HW1\\TestUnit2\\Task1\\NUnitTestProject1\\NUnitTestProject1.csproj",
+      "projectUniqueName": "D:\\DEV\\HW_CALCS_TESTS\\C#_HW1\\TestUnit2\\Task1\\NUnitTestProject1\\NUnitTestProject1.csproj",
       "projectName": "NUnitTestProject1",
-      "projectPath": "C:\\Users\\User\\Desktop\\C#_HW1\\TestUnit2\\Task1\\NUnitTestProject1\\NUnitTestProject1.csproj",
+      "projectPath": "D:\\DEV\\HW_CALCS_TESTS\\C#_HW1\\TestUnit2\\Task1\\NUnitTestProject1\\NUnitTestProject1.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\C#_HW1\\TestUnit2\\Task1\\NUnitTestProject1\\obj\\",
+      "outputPath": "D:\\DEV\\HW_CALCS_TESTS\\C#_HW1\\TestUnit2\\Task1\\NUnitTestProject1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5301,8 +5301,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\C#_HW1\\TestUnit2\\Task1\\Task2\\Task1.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\C#_HW1\\TestUnit2\\Task1\\Task2\\Task1.csproj"
+            "D:\\DEV\\HW_CALCS_TESTS\\C#_HW1\\TestUnit2\\Task1\\Task2\\Task1.csproj": {
+              "projectPath": "D:\\DEV\\HW_CALCS_TESTS\\C#_HW1\\TestUnit2\\Task1\\Task2\\Task1.csproj"
             }
           }
         }

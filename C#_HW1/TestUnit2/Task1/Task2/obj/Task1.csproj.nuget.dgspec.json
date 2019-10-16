@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\C#_HW1\\TestUnit2\\Task1\\Task2\\Task1.csproj": {}
+    "D:\\DEV\\HW_CALCS_TESTS\\C#_HW1\\TestUnit2\\Task1\\Task2\\Task1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\C#_HW1\\TestUnit2\\Task1\\Task2\\Task1.csproj": {
+    "D:\\DEV\\HW_CALCS_TESTS\\C#_HW1\\TestUnit2\\Task1\\Task2\\Task1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\C#_HW1\\TestUnit2\\Task1\\Task2\\Task1.csproj",
+        "projectUniqueName": "D:\\DEV\\HW_CALCS_TESTS\\C#_HW1\\TestUnit2\\Task1\\Task2\\Task1.csproj",
         "projectName": "Task1",
-        "projectPath": "C:\\Users\\User\\Desktop\\C#_HW1\\TestUnit2\\Task1\\Task2\\Task1.csproj",
+        "projectPath": "D:\\DEV\\HW_CALCS_TESTS\\C#_HW1\\TestUnit2\\Task1\\Task2\\Task1.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\C#_HW1\\TestUnit2\\Task1\\Task2\\obj\\",
+        "outputPath": "D:\\DEV\\HW_CALCS_TESTS\\C#_HW1\\TestUnit2\\Task1\\Task2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

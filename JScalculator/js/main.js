@@ -26,14 +26,20 @@ for (let i = 0; i < allBtns.length; i++) {
 }
 let clickNumber = num => {
     if (check) {
-        if(+display.value == 0 && num == 0)//////////////
-            return 'false';//////////////////////
+        if (+display.value == 0 && num == 0) //////////////
+            return 'false'; //////////////////////
 
         display.value = num;
         check = false;
     } else {
-        display.value += num;
-        cutDisplay(display.value);
+        if (+display.value == 0 && num == 0) //////////////
+            return 'false';
+        if (+display.value == 0) {
+            display.value = num;
+        } else {
+            display.value += num;
+            cutDisplay(display.value);
+        }
     }
 }
 
@@ -97,128 +103,125 @@ clearBtn.addEventListener('click', function () {
 })
 
 function Summ(a, b) {
-    if(typeof a != "number" || typeof b != "number")
+    if (typeof a != "number" || typeof b != "number")
         return 'false';
     a += b;
     let c = parseInt(a);
-            console.log(c);
-     if(c > 999999999 || isNaN(a)){
+    console.log(c);
+    if (c > 999999999 || isNaN(a)) {
         display.value = "Error";
         return "false";
     }
-     let local = String(a); 
-        a = cutDisplay(local);
-        a = parseFloat(a);
+    let local = String(a);
+    a = cutDisplay(local);
+    a = parseFloat(a);
     return a
 }
 
 function minus(a, b) {
-     if(typeof a != "number" || typeof b != "number")
+    if (typeof a != "number" || typeof b != "number")
         return 'false';
     a -= b;
     let c = parseInt(a);
-            console.log(c);
-      if(c > 999999999 || isNaN(a)){
+    console.log(c);
+    if (c > 999999999 || isNaN(a)) {
         display.value = "Error";
         return "false";
     }
-        let local = String(a); 
-        a = cutDisplay(local);
-        a = parseFloat(a);
+    let local = String(a);
+    a = cutDisplay(local);
+    a = parseFloat(a);
     return a
 }
 
 function divide(a, b) {
-    if(typeof a == "number" && typeof b == "number"){
-    if(a == 0 || b == 0 ){
-        console.log('dnul00000  ' + a + "  " + b);
-        return 0;
-    }
+    if (typeof a == "number" && typeof b == "number") {
+        if (a == 0 || b == 0) {
+            return 0;
+        }
 
 
-    a /= b;
-    let c = parseInt(a);
-            console.log(c);
-      if(c > 999999999 || isNaN(a)){
-        display.value = "Error";
-        return "false";
-    }
-        let local = String(a); 
+        a /= b;
+        let c = parseInt(a);
+        console.log(c);
+        if (c > 999999999 || isNaN(a)) {
+            display.value = "Error";
+            return "false";
+        }
+        let local = String(a);
         a = cutDisplay(local);
         a = parseFloat(a);
-    return a
-}
-else{
-    return 'false';
-}
+        return a
+    } else {
+        return 'false';
+    }
 }
 
 function multiply(a, b) {
-    if(typeof a != "number" || typeof b != "number")
+    if (typeof a != "number" || typeof b != "number")
         return 'false';
     a *= b;
     let c = parseInt(a);
-            console.log(c);
-    if(c > 999999999 || isNaN(a)){
+    console.log(c);
+    if (c > 999999999 || isNaN(a)) {
         display.value = "Error";
         return "false";
     }
-        let local = String(a); 
-        a = cutDisplay(local);
-        a = parseFloat(a);
+    let local = String(a);
+    a = cutDisplay(local);
+    a = parseFloat(a);
     return a
 }
 
 ressultBtn.addEventListener('click', function () {
     if (ressultFlag) {
         countNumber = +display.value;
-    
-    switch (flag) {
-        case '+':
-            memoryNumber = Summ(memoryNumber, countNumber);
-            check = true;
-            isPointOn = true;
-            ressultFlag = false;
-            break;
-        case '-':
-            memoryNumber = minus(memoryNumber, countNumber);
-            check = true;
-            isPointOn = true;
-            ressultFlag = false;
-            break;
-         case '/':
-                memoryNumber = divide(memoryNumber, countNumber);
-            
 
-            check = true;
-            isPointOn = true;
-            ressultFlag = false;
-            break;
-        case '*':
-            memoryNumber = multiply(memoryNumber, countNumber);
-            check = true;
-            isPointOn = true;
-            ressultFlag = false;
-            break;
-    }
-        if(memoryNumber == "false")
-        {
+        switch (flag) {
+            case '+':
+                memoryNumber = Summ(memoryNumber, countNumber);
+                check = true;
+                isPointOn = true;
+                ressultFlag = false;
+                break;
+            case '-':
+                memoryNumber = minus(memoryNumber, countNumber);
+                check = true;
+                isPointOn = true;
+                ressultFlag = false;
+                break;
+            case '/':
+                memoryNumber = divide(memoryNumber, countNumber);
+
+
+                check = true;
+                isPointOn = true;
+                ressultFlag = false;
+                break;
+            case '*':
+                memoryNumber = multiply(memoryNumber, countNumber);
+                check = true;
+                isPointOn = true;
+                ressultFlag = false;
+                break;
+        }
+        if (memoryNumber == "false") {
             return 0;
-             memoryNumber = 0;
-    countNumber = 0;
-    flag = '';
+            memoryNumber = 0;
+            countNumber = 0;
+            flag = '';
         }
 
-    display.value = memoryNumber;
-    cutDisplay(display.value);
-    memoryNumber = 0;
-    countNumber = 0;
-    flag = '';
-}
+        display.value = memoryNumber;
+        cutDisplay(display.value);
+        memoryNumber = 0;
+        countNumber = 0;
+        flag = '';
+    }
 });
 
 function cutDisplay(a) {
-    if(a == null)
+    if (a == null)
         return 'false';
     if (a.length > 9) {
         a = a.slice(0, 9);
@@ -229,7 +232,7 @@ function cutDisplay(a) {
 
 function lastOperation() {
     switch (flag) {
-        case '+' :
+        case '+':
             if (check) {
 
                 memoryNumber = display.value;
@@ -239,7 +242,7 @@ function lastOperation() {
             display.value = memoryNumber;
             cutDisplay(display.value);
             break;
-        case '-' :
+        case '-':
             if (check) {
                 memoryNumber = display.value;
             } else {
@@ -248,7 +251,7 @@ function lastOperation() {
             display.value = memoryNumber;
             cutDisplay(display.value);
             break;
-        case '/' :
+        case '/':
             if (check) {
                 memoryNumber = display.value;
             } else {
@@ -257,16 +260,15 @@ function lastOperation() {
             display.value = memoryNumber;
             cutDisplay(display.value);
             break;
-        case '*' :
+        case '*':
             if (check) {
                 memoryNumber = display.value;
             } else {
                 memoryNumber = multiply(memoryNumber, Number(display.value));
             }
-             if(memoryNumber == "false")
-        {
-            return 0;
-        }
+            if (memoryNumber == "false") {
+                return 0;
+            }
 
 
             display.value = memoryNumber;
@@ -274,4 +276,3 @@ function lastOperation() {
             break;
     }
 }
-

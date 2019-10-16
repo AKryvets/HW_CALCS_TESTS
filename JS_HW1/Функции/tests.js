@@ -3,7 +3,7 @@ describe("function dayOfWeek()", function() {
         const a = 1;
         const exp = 'Monday - Понедельник';
         const act = dayOfWeek(a);
-
+        
         assert.equal(act, exp);
     });
      it("call function dayOfWeek with args a = 0  and return 'true'", function () {
