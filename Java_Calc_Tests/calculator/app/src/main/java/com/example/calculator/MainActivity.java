@@ -69,10 +69,12 @@ public class MainActivity extends AppCompatActivity {
         }else{
             numberField.append(button.getText());
         }
-        cutDisplay(numberField.getText().toString());
+
+        numberField.setText( cutDisplay(numberField.getText().toString()));
         if(lastOperation.equals("=") && operand!=null){
             operand = null;
         }
+
     }
 
     // обработка нажатия на кнопку операции
@@ -130,7 +132,12 @@ public class MainActivity extends AppCompatActivity {
         resultField.setText(operand.toString());
 
         numberField.setText(operand.toString());
-        String a = cutDisplay(numberField.getText().toString());
+        if(numberField.getText().toString().toCharArray().length > 9 && operation.equals("=")) {
+            numberField.setText("error");
+        }else {
+            String a = cutDisplay(numberField.getText().toString());
+            numberField.setText(a);
+        }
     }
 
     public static double summ(double a, double b){
@@ -142,6 +149,8 @@ public class MainActivity extends AppCompatActivity {
         return a;
     }
     public double div(double a, double b){
+        if(a == 0 || b ==0 )
+            return 0;
         a /= b;
         return a;
     }
@@ -160,7 +169,6 @@ public class MainActivity extends AppCompatActivity {
                 first += a[i];
             }
         }
-        numberField.setText(first);
         return first;
     }
 }

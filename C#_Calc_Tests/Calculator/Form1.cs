@@ -252,7 +252,7 @@ namespace WindowsFormsApp1
                 !string.IsNullOrEmpty(operands.Last()) &&
                 operands.Last().Length > 8)
                 return;
-            // не можна ввести більше 8 символів
+            // не можна ввести більше  символів
 
             if (!(digit == "+" || digit == "-" || digit == "*" || digit == "/"))
             {
