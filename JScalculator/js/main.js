@@ -5,6 +5,7 @@ let isPointOn = true;
 let isNegative = false;
 let ressultFlag = true;
 let flag = '';
+let isEqual = false;
 let dubBtn = document.getElementById('dub');
 let display = document.getElementById('talo');
 let plusBtn = document.getElementById('plusBtn');
@@ -172,7 +173,8 @@ function multiply(a, b) {
     a = parseFloat(a);
     return a
 }
-
+//let saveFlag = "";
+//let saveValue = ""; 
 ressultBtn.addEventListener('click', function () {
     if (ressultFlag) {
         countNumber = +display.value;
@@ -192,8 +194,6 @@ ressultBtn.addEventListener('click', function () {
                 break;
             case '/':
                 memoryNumber = divide(memoryNumber, countNumber);
-
-
                 check = true;
                 isPointOn = true;
                 ressultFlag = false;
@@ -214,6 +214,13 @@ ressultBtn.addEventListener('click', function () {
 
         display.value = memoryNumber;
         cutDisplay(display.value);
+        /*if (isEqual = false) {
+            isEqual = true;
+            saveValue = countNumber;
+            saveFlag = flag;
+        } else {
+            cutDisplay(Number(display.value) + saveValue)
+        }*/
         memoryNumber = 0;
         countNumber = 0;
         flag = '';
