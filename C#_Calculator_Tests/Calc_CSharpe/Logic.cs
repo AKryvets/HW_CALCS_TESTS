@@ -21,7 +21,7 @@ namespace Calc_CSharpe
     return this.checkLenght(a);
 }
     public bool isNice(double a) {
-    double c = Convert.ToDouble(a);
+    Int64 c = Convert.ToInt64(a);
     if (c > 999999999) {
         return false;
     }

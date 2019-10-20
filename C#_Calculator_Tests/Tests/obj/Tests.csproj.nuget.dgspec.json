@@ -1,28 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Calc_CSharpe\\Tests\\Tests.csproj": {}
+    "D:\\DEV\\HW_CALCS_TESTS\\C#_Calculator_Tests\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Calc_CSharpe\\Calc_CSharpe\\Calc_CSharpe.csproj": {
+    "D:\\DEV\\HW_CALCS_TESTS\\C#_Calculator_Tests\\Calc_CSharpe\\Calc_CSharpe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Calc_CSharpe\\Calc_CSharpe\\Calc_CSharpe.csproj",
+        "projectUniqueName": "D:\\DEV\\HW_CALCS_TESTS\\C#_Calculator_Tests\\Calc_CSharpe\\Calc_CSharpe.csproj",
         "projectName": "Calc_CSharpe",
-        "projectPath": "C:\\Users\\User\\Desktop\\Calc_CSharpe\\Calc_CSharpe\\Calc_CSharpe.csproj"
+        "projectPath": "D:\\DEV\\HW_CALCS_TESTS\\C#_Calculator_Tests\\Calc_CSharpe\\Calc_CSharpe.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\User\\Desktop\\Calc_CSharpe\\Tests\\Tests.csproj": {
+    "D:\\DEV\\HW_CALCS_TESTS\\C#_Calculator_Tests\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Calc_CSharpe\\Tests\\Tests.csproj",
+        "projectUniqueName": "D:\\DEV\\HW_CALCS_TESTS\\C#_Calculator_Tests\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "C:\\Users\\User\\Desktop\\Calc_CSharpe\\Tests\\Tests.csproj",
+        "projectPath": "D:\\DEV\\HW_CALCS_TESTS\\C#_Calculator_Tests\\Tests\\Tests.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Calc_CSharpe\\Tests\\obj\\",
+        "outputPath": "D:\\DEV\\HW_CALCS_TESTS\\C#_Calculator_Tests\\Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,8 +38,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Calc_CSharpe\\Calc_CSharpe\\Calc_CSharpe.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Calc_CSharpe\\Calc_CSharpe\\Calc_CSharpe.csproj"
+              "D:\\DEV\\HW_CALCS_TESTS\\C#_Calculator_Tests\\Calc_CSharpe\\Calc_CSharpe.csproj": {
+                "projectPath": "D:\\DEV\\HW_CALCS_TESTS\\C#_Calculator_Tests\\Calc_CSharpe\\Calc_CSharpe.csproj"
               }
             }
           }
