@@ -211,10 +211,10 @@ public class MainActivity extends AppCompatActivity {
                 {
                     model.setCountNumber(Double.parseDouble(getDisplay()));
                     switchOperations(model.getOperationClicked(), model.getMemoryNumber(), model.getCountNumber());
-                    if (model.getMemoryNumber() == 1999999999)
+                    if (model.getMemoryNumber() > 999999999)
                     {
                         setDisplay("Error");
-                   return;
+                        return;
                     }
                     if (model.getIsResultCount() == true)
                     {
@@ -234,12 +234,14 @@ public class MainActivity extends AppCompatActivity {
                 if (model.getIsResultCount() == false)
                 {
                     switchOperations(operand, Double.parseDouble(getDisplay()), second);
-                    if (model.getMemoryNumber() == 1999999999)
+                    System.out.println(model.getMemoryNumber());
+                    setDisplay(Double.toString(model.getMemoryNumber()));
+                    if (model.getMemoryNumber() >= 999999999)
                     {
                         setDisplay("Error");
                         return;
-                    }
-                    setDisplay(logic.cutDisplay(Double.toString(model.getMemoryNumber())));
+                    }else
+                    setDisplay(logic.cutDisplay(getDisplay()));
 
                 }
                 model.setIsResultCount(false);
@@ -367,27 +369,35 @@ public class MainActivity extends AppCompatActivity {
             {
                 case '+':
                     model.setMemoryNumber(logic.summ(model.getMemoryNumber(), Double.parseDouble(getDisplay())));
-                    if (model.getMemoryNumber() == 1999999999)
+                    if (model.getMemoryNumber() >= 999999999) {
                         setDisplay("Error");
-                    setDisplay(logic.cutDisplay(getDisplay()));
+                        return;
+                    }
+                    setDisplay(logic.cutDisplay(Double.toString(model.getMemoryNumber())));
                     break;
                 case '-':
                     model.setMemoryNumber(logic.minus(model.getMemoryNumber(), Double.parseDouble(getDisplay())));
-                    if (model.getMemoryNumber() == 1999999999)
+                    if (model.getMemoryNumber() >= 999999999) {
                         setDisplay("Error");
-                    setDisplay(logic.cutDisplay(getDisplay()));
+                        return;
+                    }
+                    setDisplay(logic.cutDisplay(Double.toString(model.getMemoryNumber())));
                     break;
                 case '/':
                     model.setMemoryNumber(logic.divide(model.getMemoryNumber(), Double.parseDouble(getDisplay())));
-                    if (model.getMemoryNumber() == 1999999999)
+                    if (model.getMemoryNumber() >= 999999999) {
                         setDisplay("Error");
-                    setDisplay(logic.cutDisplay(getDisplay()));
+                        return;
+                    }
+                    setDisplay(logic.cutDisplay(Double.toString(model.getMemoryNumber())));
                     break;
                 case '*':
                     model.setMemoryNumber(logic.multiply(model.getMemoryNumber(), Double.parseDouble(getDisplay())));
-                    if (model.getMemoryNumber() == 1999999999)
+                    if (model.getMemoryNumber() >= 999999999) {
                         setDisplay("Error");
-                    setDisplay(logic.cutDisplay(getDisplay()));
+                        return;
+                    }
+                    setDisplay(logic.cutDisplay(Double.toString(model.getMemoryNumber())));
                     break;
             }
     }

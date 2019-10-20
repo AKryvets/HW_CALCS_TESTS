@@ -10,8 +10,8 @@ let clickNumber = num => {
         model.setDisplayValue(num);
         model.setIsCheck(false);
     } else {
-        if (+model.getDisplayValue() == 0 && num == 0) return "false";
-        if (+model.getDisplayValue() == 0) {
+        if (model.getDisplayValue() == "0" && num == 0) return "false";
+        if (model.getDisplayValue() == "0") {
             model.setDisplayValue(num);
         } else {
             model.setDisplayValue(logic.cutDisplay(model.getDisplayValue() + num));
@@ -43,8 +43,8 @@ function addListeners() {
         for (let i = 0; i < model.getDisplayValue().length; i++) {
             if (model.getDisplayValue()[i] === ".") return;
         }
-        model.setDisplayValue(model.getDisplayValue() + ".")
-        setIsCheck(false);
+        model.setDisplayValue(model.getDisplayValue() + ".");
+        model.setIsCheck(false);
     });
     model.getPlusBtn().addEventListener("click", function () {
         lastOperation();
@@ -70,7 +70,11 @@ function addListeners() {
     model.getResultBtn().addEventListener("click", function () {
         if (model.getIsResult()) {
             model.setCountNumber(Number(model.getDisplayValue()));
-            switchOperations(model.getOperationClicked(), model.getMemoryNumber(), model.getCountNumber());
+            switchOperations(
+                model.getOperationClicked(),
+                model.getMemoryNumber(),
+                model.getCountNumber()
+            );
 
             if (model.getIsResultCount() == true)
                 model.setCopyOfArgs(toDoCopyOfArgs());
@@ -84,12 +88,14 @@ function addListeners() {
             model.setOperationClicked("");
         }
         if (model.getIsResultCount() == false) {
-            switchOperations(model.getCopyOfArgs().a, Number(model.getDisplayValue()), model.getCopyOfArgs().c);
+            switchOperations(
+                model.getCopyOfArgs().a,
+                Number(model.getDisplayValue()),
+                model.getCopyOfArgs().c
+            );
             model.setDisplayValue(logic.cutDisplay(model.getMemoryNumber()));
-
         }
-        if (model.getDisplayValue() == "false")
-            model.setDisplayValue("Error");
+        if (model.getDisplayValue() == "false") model.setDisplayValue("Error");
         model.setIsResultCount(false);
     });
 }
@@ -100,32 +106,42 @@ function lastOperation() {
     } else
         switch (model.getOperationClicked()) {
             case "+":
-                model.setMemoryNumber(logic.summ(model.getMemoryNumber(), Number(model.getDisplayValue())));
+                model.setMemoryNumber(
+                    logic.summ(model.getMemoryNumber(), Number(model.getDisplayValue()))
+                );
                 model.setDisplayValue(logic.cutDisplay(model.getMemoryNumber()));
                 break;
             case "-":
-                model.setMemoryNumber(logic.minus(model.getMemoryNumber(), Number(model.getDisplayValue())));
+                model.setMemoryNumber(
+                    logic.minus(model.getMemoryNumber(), Number(model.getDisplayValue()))
+                );
                 model.setDisplayValue(logic.cutDisplay(model.getMemoryNumber()));
                 break;
             case "/":
-                model.setMemoryNumber(logic.divide(model.getMemoryNumber(), Number(model.getDisplayValue())));
+                model.setMemoryNumber(
+                    logic.divide(model.getMemoryNumber(), Number(model.getDisplayValue()))
+                );
                 model.setDisplayValue(logic.cutDisplay(model.getMemoryNumber()));
                 break;
             case "*":
-                model.setMemoryNumber(logic.multiply(model.getMemoryNumber(), Number(model.getDisplayValue())));
+                model.setMemoryNumber(
+                    logic.multiply(
+                        model.getMemoryNumber(),
+                        Number(model.getDisplayValue())
+                    )
+                );
                 model.setDisplayValue(logic.cutDisplay(model.getMemoryNumber()));
                 break;
         }
-    if (model.getDisplayValue() == "false")
-        model.setDisplayValue("Error");
+    if (model.getDisplayValue() == "false") model.setDisplayValue("Error");
 }
 
 function toDoCopyOfArgs() {
     let copy = {
         a: model.getOperationClicked(),
         b: model.getMemoryNumber(),
-        c: model.getCountNumber(),
-    }
+        c: model.getCountNumber()
+    };
     return copy;
 }
 

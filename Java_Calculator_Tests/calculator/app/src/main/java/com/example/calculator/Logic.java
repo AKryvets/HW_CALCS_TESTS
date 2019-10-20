@@ -13,7 +13,8 @@ public class Logic
         return this.checkLenght(a);
     }
     public boolean isNice(double a) {
-        Integer c =(int) a;
+        Integer c = (int) a;
+        System.out.println(c + " ccccccccccccccc");
         if (c > 999999999) {
             return false;
         }
@@ -52,7 +53,7 @@ public class Logic
         }
         return Stringa;
     }
-    public double checkLenght(double a) {
+    public double checkLenght(Double a) {
         return Double.parseDouble(this.cutDisplay(Double.toString(a)));
     }
 }
