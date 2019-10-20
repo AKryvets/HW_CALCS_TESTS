@@ -21,6 +21,7 @@ namespace Calc_CSharpe
         public Form1()
         {
             InitializeComponent();
+            textBox1.ReadOnly = true;
         }
         private void setDisplay(string number)
         {
@@ -206,25 +207,37 @@ namespace Calc_CSharpe
                     case '+':
                         model.setMemoryNumber(logic.summ(model.getMemoryNumber(), Convert.ToDouble(getDisplay())));
                         if (model.getMemoryNumber() == 999999999999)
+                        {
                             setDisplay("Error");
+                            return;
+                        }
                         setDisplay(logic.cutDisplay(model.getMemoryNumber().ToString()));
                         break;
                     case '-':
                         model.setMemoryNumber(logic.minus(model.getMemoryNumber(), Convert.ToDouble(getDisplay())));
                         if (model.getMemoryNumber() == 999999999999)
+                        {
                             setDisplay("Error");
+                            return;
+                        }
                         setDisplay(logic.cutDisplay(model.getMemoryNumber().ToString()));
                         break;
                     case '/':
                         model.setMemoryNumber(logic.divide(model.getMemoryNumber(), Convert.ToDouble(getDisplay())));
                         if (model.getMemoryNumber() == 999999999999)
+                        {
                             setDisplay("Error");
+                            return;
+                        }
                         setDisplay(logic.cutDisplay(model.getMemoryNumber().ToString()));
                         break;
                     case '*':
                         model.setMemoryNumber(logic.multiply(model.getMemoryNumber(), Convert.ToDouble(getDisplay())));
                         if (model.getMemoryNumber() == 999999999999)
+                        {
                             setDisplay("Error");
+                            return;
+                        }
                         setDisplay(logic.cutDisplay(model.getMemoryNumber().ToString()));
                         break;
                 }
@@ -243,6 +256,8 @@ namespace Calc_CSharpe
             if (getDisplay() == "Error")
                 goto end;
             lastOperation();
+            if (getDisplay() == "Error")
+                goto end;
             onOperationClick('+');
             end: model.setIsCheck(true);
         }
@@ -252,6 +267,8 @@ namespace Calc_CSharpe
             if (getDisplay() == "Error")
                 goto end;
             lastOperation();
+            if (getDisplay() == "Error")
+                goto end;
             onOperationClick('/');
             end: model.setIsCheck(true);
         }
@@ -261,6 +278,8 @@ namespace Calc_CSharpe
             if (getDisplay() == "Error")
                 goto end;
             lastOperation();
+            if (getDisplay() == "Error")
+                goto end;
             onOperationClick('*');
             end: model.setIsCheck(true);
         }
@@ -270,6 +289,8 @@ namespace Calc_CSharpe
             if (getDisplay() == "Error")
                 goto end;
             lastOperation();
+            if (getDisplay() == "Error")
+                goto end;
             onOperationClick('-');
             end: model.setIsCheck(true);
         }
