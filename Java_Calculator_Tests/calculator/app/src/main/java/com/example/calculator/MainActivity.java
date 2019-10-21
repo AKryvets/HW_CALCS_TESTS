@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.math.BigDecimal;
+
 
 public class MainActivity extends AppCompatActivity {
     EditText numberField;   // поле для ввода числа
@@ -235,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     switchOperations(operand, Double.parseDouble(getDisplay()), second);
                     System.out.println(model.getMemoryNumber());
-                    setDisplay(Double.toString(model.getMemoryNumber()));
+                    setDisplay(new BigDecimal(model.getMemoryNumber()).toString());
                     if (model.getMemoryNumber() >= 999999999)
                     {
                         setDisplay("Error");
@@ -373,7 +375,7 @@ public class MainActivity extends AppCompatActivity {
                         setDisplay("Error");
                         return;
                     }
-                    setDisplay(logic.cutDisplay(Double.toString(model.getMemoryNumber())));
+                    setDisplay(logic.cutDisplay((new BigDecimal(model.getMemoryNumber()).toString())));
                     break;
                 case '-':
                     model.setMemoryNumber(logic.minus(model.getMemoryNumber(), Double.parseDouble(getDisplay())));
@@ -381,7 +383,7 @@ public class MainActivity extends AppCompatActivity {
                         setDisplay("Error");
                         return;
                     }
-                    setDisplay(logic.cutDisplay(Double.toString(model.getMemoryNumber())));
+                    setDisplay(logic.cutDisplay((new BigDecimal(model.getMemoryNumber()).toString())));
                     break;
                 case '/':
                     model.setMemoryNumber(logic.divide(model.getMemoryNumber(), Double.parseDouble(getDisplay())));
@@ -389,7 +391,7 @@ public class MainActivity extends AppCompatActivity {
                         setDisplay("Error");
                         return;
                     }
-                    setDisplay(logic.cutDisplay(Double.toString(model.getMemoryNumber())));
+                    setDisplay(logic.cutDisplay((new BigDecimal(model.getMemoryNumber()).toString())));
                     break;
                 case '*':
                     model.setMemoryNumber(logic.multiply(model.getMemoryNumber(), Double.parseDouble(getDisplay())));
@@ -397,7 +399,7 @@ public class MainActivity extends AppCompatActivity {
                         setDisplay("Error");
                         return;
                     }
-                    setDisplay(logic.cutDisplay(Double.toString(model.getMemoryNumber())));
+                    setDisplay(logic.cutDisplay((new BigDecimal(model.getMemoryNumber()).toString())));
                     break;
             }
     }

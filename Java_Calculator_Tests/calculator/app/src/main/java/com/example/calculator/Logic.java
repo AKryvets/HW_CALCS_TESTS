@@ -1,5 +1,7 @@
 package com.example.calculator;
 
+import java.math.BigDecimal;
+
 public class Logic
 {
     public double summ(double a, double b) {
@@ -54,6 +56,6 @@ public class Logic
         return Stringa;
     }
     public double checkLenght(Double a) {
-        return Double.parseDouble(this.cutDisplay(Double.toString(a)));
+        return Double.parseDouble(this.cutDisplay((new BigDecimal(a)).toString()));
     }
 }
