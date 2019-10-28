@@ -11,7 +11,7 @@
     <EditText
         android:id="@+id/numberField"
         android:layout_width="379dp"
-        android:layout_height="118dp"
+        android:layout_height="88dp"
         android:background="#ddd"
         android:cursorVisible="false"
         android:focusable="false"
@@ -29,7 +29,7 @@
         <Button
             android:id="@+id/one"
             android:layout_width="25dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#ddd"
             android:onClick="onNumberClick"
@@ -41,7 +41,7 @@
         <Button
             android:id="@+id/two"
             android:layout_width="25dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#ddd"
             android:onClick="onNumberClick"
@@ -52,7 +52,7 @@
         <Button
             android:id="@+id/three"
             android:layout_width="25dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#ddd"
             android:onClick="onNumberClick"
@@ -63,7 +63,7 @@
         <Button
             android:id="@+id/divide"
             android:layout_width="25dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#B9B9B9"
             android:onClick="onOperationClick"
@@ -79,7 +79,7 @@
         <Button
             android:id="@+id/four"
             android:layout_width="25dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#dddddd"
             android:onClick="onNumberClick"
@@ -90,7 +90,7 @@
         <Button
             android:id="@+id/five"
             android:layout_width="25dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#dddddd"
             android:onClick="onNumberClick"
@@ -101,7 +101,7 @@
         <Button
             android:id="@+id/six"
             android:layout_width="25dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#dddddd"
             android:onClick="onNumberClick"
@@ -112,7 +112,7 @@
         <Button
             android:id="@+id/multiply"
             android:layout_width="25dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#B9B9B9"
             android:onClick="onOperationClick"
@@ -128,7 +128,7 @@
         <Button
             android:id="@+id/seven"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#dddddd"
             android:backgroundTintMode="add"
@@ -140,7 +140,7 @@
         <Button
             android:id="@+id/eight"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#dddddd"
             android:onClick="onNumberClick"
@@ -151,7 +151,7 @@
         <Button
             android:id="@+id/nine"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#dddddd"
             android:onClick="onNumberClick"
@@ -162,7 +162,7 @@
         <Button
             android:id="@+id/minus"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#B9B9B9"
             android:onClick="onOperationClick"
@@ -180,7 +180,7 @@
         <Button
             android:id="@+id/zero"
             android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="2"
             android:background="#dddddd"
             android:onClick="onNumberClick"
@@ -191,7 +191,7 @@
         <Button
             android:id="@+id/dot"
             android:layout_width="50dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#B9B9B9"
             android:onClick="onNumberClick"
@@ -202,7 +202,7 @@
         <Button
             android:id="@+id/plus"
             android:layout_width="50dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#B9B9B9"
             android:onClick="onOperationClick"
@@ -219,7 +219,7 @@
         <Button
             android:id="@+id/equal"
             android:layout_width="191dp"
-            android:layout_height="120dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:background="#B699B9"
             android:onClick="onOperationClick"

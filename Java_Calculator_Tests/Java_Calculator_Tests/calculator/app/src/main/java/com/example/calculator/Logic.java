@@ -17,7 +17,7 @@ public class Logic
     public boolean isNice(double a) {
         Integer c = (int) a;
         System.out.println(c + " ccccccccccccccc");
-        if (c > 999999999) {
+        if (c > 999999999||c < -99999999) {
             return false;
         }
         return true;

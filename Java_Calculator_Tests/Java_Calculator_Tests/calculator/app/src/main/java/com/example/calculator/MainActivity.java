@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 model.setOperationClicked('\0');
                 model.setIsCheck(true);
                 model.setIsResult(true);
+                model.setIsResultCount(true);
             }
         });
 
@@ -184,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
         dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View V) {
+                if(getDisplay().length() >=9)return;
                 try {
                     Double.parseDouble(getDisplay());
                 }catch (NumberFormatException e){
@@ -203,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
         equal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(model.getOperationClicked() == '\0')return;
                 try {
                     Double.parseDouble(getDisplay());
                 }catch (NumberFormatException e){
@@ -228,10 +231,10 @@ public class MainActivity extends AppCompatActivity {
                     model.setIsCheck(true);
                     model.setIsResult(false);
 
-                    setDisplay(logic.cutDisplay(Double.toString(model.getMemoryNumber())));
+                    setDisplay(logic.cutDisplay(new BigDecimal(model.getMemoryNumber()).toString()));
                     model.setCountNumber(0);
                     model.setMemoryNumber(0);
-                    model.setOperationClicked('\0');
+
                 }
                 if (model.getIsResultCount() == false)
                 {
@@ -247,6 +250,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                 model.setIsResultCount(false);
+                model.setIsCheck(true);
             }
         });
 
@@ -318,6 +322,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Integer num =(int) Double.parseDouble(b0.getText().toString());
+                System.out.println(getDisplay());
+                if(Double.parseDouble(getDisplay()) == 0) return;
                 onNumberClick(num);
             }
         });
@@ -326,6 +332,12 @@ public class MainActivity extends AppCompatActivity {
 
     // обработка нажатия на числовую кнопку
     public String onNumberClick(Integer num){
+        if (num == 0)
+            if (getDisplay() == "0")
+            {
+                setDisplay(num.toString());
+                return  "return";
+            }
         try {
             Double.parseDouble(getDisplay());
         }catch (NumberFormatException e){
@@ -344,11 +356,7 @@ public class MainActivity extends AppCompatActivity {
             setDisplay(logic.cutDisplay(qwerty));
 
         }
-        if (num == 0)
-            if (getDisplay() == "00")
-            {
-                setDisplay(num.toString());
-            }
+
 
         model.setIsResultCount(true);
         return "good";
