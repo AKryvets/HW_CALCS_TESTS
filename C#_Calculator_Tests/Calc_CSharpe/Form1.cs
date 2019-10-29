@@ -132,6 +132,7 @@ namespace Calc_CSharpe
             model.setOperationClicked('\0');
             model.setIsCheck(true);
             model.setIsResult(true);
+            model.setIsResultCount(true);
         }
         double second = 0;
         char operand = '\0';
@@ -293,6 +294,11 @@ namespace Calc_CSharpe
                 goto end;
             onOperationClick('-');
             end: model.setIsCheck(true);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
