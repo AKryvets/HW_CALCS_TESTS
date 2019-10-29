@@ -2,6 +2,7 @@ function clear() {
     model.setOperationClicked("");
     model.setIsCheck(true);
     model.setIsResult(true);
+    model.setIsResultCount(true);
 }
 
 let clickNumber = num => {
