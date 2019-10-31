@@ -51,7 +51,8 @@ namespace Calc_CSharpe
             if (getDisplay() == "00")
             {
                 setDisplay(num.ToString());
-            }
+                    model.setIsCheck(true);
+                }
             end:
             model.setIsResultCount(true);
             return "good";
@@ -138,7 +139,8 @@ namespace Calc_CSharpe
         char operand = '\0';
         private void button14_Click(object sender, EventArgs e)
         {
-             if (getDisplay() == "Error")
+            if (model.getOperationClicked() == '\0') goto secondClick;
+            if (getDisplay() == "Error")
                 goto end;
             if (model.getIsResult() == true)
             {
@@ -164,8 +166,10 @@ namespace Calc_CSharpe
                 model.setMemoryNumber(0);
                 model.setOperationClicked('\0');
             }
+        secondClick:
             if (model.getIsResultCount() == false)
             {
+                
                 switchOperations(operand, Convert.ToDouble(getDisplay()), second);
                 if (model.getMemoryNumber() == 999999999999)
                 {
