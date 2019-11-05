@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case '*':
                 model.setMemoryNumber(logic.multiply(first, second));
+                System.out.println(model.getMemoryNumber() + "switch");
                 break;
         }
     }
@@ -230,24 +231,25 @@ public class MainActivity extends AppCompatActivity {
 
                     model.setIsCheck(true);
                     model.setIsResult(false);
-
-                    setDisplay(logic.cutDisplay(new BigDecimal(model.getMemoryNumber()).toString()));
+                    Float a = (float) Double.parseDouble(new BigDecimal(model.getMemoryNumber()).toString());
+                    setDisplay(logic.cutDisplay(a.toString()));
                     model.setCountNumber(0);
                     model.setMemoryNumber(0);
 
                 }
                 if (model.getIsResultCount() == false)
                 {
-                    switchOperations(operand, Double.parseDouble(getDisplay()), second);
+                    Float first = (float) Double.parseDouble(new BigDecimal(getDisplay()).toString());
+                    switchOperations(operand, first , second);
                     System.out.println(model.getMemoryNumber());
                     setDisplay(new BigDecimal(model.getMemoryNumber()).toString());
                     if (model.getMemoryNumber() >= 999999999)
                     {
                         setDisplay("Error");
                         return;
-                    }else
+                    }else;
                     setDisplay(logic.cutDisplay(getDisplay()));
-
+                    model.setIsCheck(true);
                 }
                 model.setIsResultCount(false);
                 model.setIsCheck(true);
@@ -323,7 +325,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Integer num =(int) Double.parseDouble(b0.getText().toString());
                 System.out.println(getDisplay());
-                if(Double.parseDouble(getDisplay()) == 0) return;
+                if(Double.parseDouble(getDisplay()) == 0){
+                    model.setIsCheck(true);
+                    return;
+                }
+
                 onNumberClick(num);
             }
         });
@@ -335,6 +341,7 @@ public class MainActivity extends AppCompatActivity {
         if (num == 0)
             if (getDisplay() == "0")
             {
+                model.setIsCheck(true);
                 setDisplay(num.toString());
                 return  "return";
             }
@@ -403,6 +410,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case '*':
                     model.setMemoryNumber(logic.multiply(model.getMemoryNumber(), Double.parseDouble(getDisplay())));
+                    System.out.println(model.getMemoryNumber() + "last");
                     if (model.getMemoryNumber() >= 999999999) {
                         setDisplay("Error");
                         return;

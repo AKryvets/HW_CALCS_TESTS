@@ -16,7 +16,6 @@ public class Logic
     }
     public boolean isNice(double a) {
         Integer c = (int) a;
-        System.out.println(c + " ccccccccccccccc");
         if (c > 999999999||c < -99999999) {
             return false;
         }
@@ -31,9 +30,16 @@ public class Logic
         return this.checkLenght(a);
     }
     public double multiply(double a, double b) {
-        a *= b;
+        BigDecimal a1 = new BigDecimal(a);
+        BigDecimal b1 = new BigDecimal(b);
+        a1 = a1.multiply(b1);
+        a = Double.parseDouble(a1.toString());
         if(!this.isNice(a)) return 1999999999;
-        return this.checkLenght(a);
+        Float aa = new Float(a);
+        return this.checkLenghtMult(aa);
+    }
+    public double checkLenghtMult(Float a) {
+        return Double.parseDouble(this.cutDisplay((new BigDecimal(a)).toString()));
     }
     public String cutDisplay(String a) {
         if (a == null) return "false";
