@@ -125,7 +125,8 @@ namespace Calc_CSharpe
             model.setIsCheck(false);
         end:;
         }
-
+        double second = 0;
+        char operand = '\0';
         private void button17_Click(object sender, EventArgs e)
         {
             setDisplay("0");
@@ -134,9 +135,10 @@ namespace Calc_CSharpe
             model.setIsCheck(true);
             model.setIsResult(true);
             model.setIsResultCount(true);
+            second = 0;
+            operand = '\0';
         }
-        double second = 0;
-        char operand = '\0';
+  
         private void button14_Click(object sender, EventArgs e)
         {
             if (model.getOperationClicked() == '\0') goto secondClick;

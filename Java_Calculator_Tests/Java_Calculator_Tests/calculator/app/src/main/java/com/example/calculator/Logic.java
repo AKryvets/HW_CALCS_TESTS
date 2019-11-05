@@ -5,14 +5,22 @@ import java.math.BigDecimal;
 public class Logic
 {
     public double summ(double a, double b) {
-        a += b;
+        BigDecimal a1 = new BigDecimal(a);
+        BigDecimal b1 = new BigDecimal(b);
+        a1 = a1.add(b1);
+        a = Double.parseDouble(a1.toString());
         if(!this.isNice(a)) return 1999999999;
-        return this.checkLenght(a);
+        Float aa = new Float(a);
+        return this.checkLenghtMult(aa);
     }
     public double minus(double a, double b) {
-        a -= b;
+        BigDecimal a1 = new BigDecimal(a);
+        BigDecimal b1 = new BigDecimal(b);
+        a1 = a1.subtract(b1);
+        a = Double.parseDouble(a1.toString());
         if(!this.isNice(a)) return 1999999999;
-        return this.checkLenght(a);
+        Float aa = new Float(a);
+        return this.checkLenghtMult(aa);
     }
     public boolean isNice(double a) {
         Integer c = (int) a;
@@ -25,9 +33,13 @@ public class Logic
         if (a == 0 || b == 0) {
             return 0;
         }
-        a /= b;
+        BigDecimal a1 = new BigDecimal(a);
+        BigDecimal b1 = new BigDecimal(b);
+        a1 = a1.divide(b1);
+        a = Double.parseDouble(a1.toString());
         if(!this.isNice(a)) return 1999999999;
-        return this.checkLenght(a);
+        Float aa = new Float(a);
+        return this.checkLenghtMult(aa);
     }
     public double multiply(double a, double b) {
         BigDecimal a1 = new BigDecimal(a);

@@ -36,6 +36,19 @@ public class MainActivity extends AppCompatActivity {
     public void setDisplay(String number)
     {
         numberField.setText(number);
+        System.out.println(getDisplay());
+        if(getDisplay().equals("0.0"))
+            numberField.setText("0");
+        else{
+            double a = Double.parseDouble(number);
+            Integer b = (int) a;
+            if(a != b && number.indexOf('.') != -1){
+            }else
+            if(a == b){
+                numberField.setText(b.toString());
+            }
+        }
+
     }
     public String getDisplay()
     {
