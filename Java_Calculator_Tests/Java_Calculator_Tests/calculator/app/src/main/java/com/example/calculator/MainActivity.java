@@ -42,9 +42,13 @@ public class MainActivity extends AppCompatActivity {
         else{
             double a = Double.parseDouble(number);
             Integer b = (int) a;
-            if(a != b && number.indexOf('.') != -1){
+            char[] array = number.toCharArray();
+            if((a != b && number.indexOf('.') != -1)){
             }else
-            if(a == b){
+            if(a == b && array[array.length - 1] == '.'){
+
+            }else{
+                if(a == b)
                 numberField.setText(b.toString());
             }
         }
